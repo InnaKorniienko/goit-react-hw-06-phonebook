@@ -7,7 +7,7 @@ export default function Filter({ value, onChangeFilter }) {
     <div className={css.filter}>
     <label className={css.label} > Find contacts by name </label>
     <input className={css.input} type="text" name="filter" value={value} 
-    onChange={(e) => onChangeFilter(e.target.value)}/>
+    onChange={onChangeFilter}/>
     </div>
     )
 }
