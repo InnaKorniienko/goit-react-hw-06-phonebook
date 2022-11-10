@@ -18,7 +18,7 @@ const PhonebookAdd = () => {
 
     const onAddContact = contact => {
         if (isDublicate(contact)) {
-        Notiflix.Notify.warning(`${contact.name} is already in contact`);
+        Notiflix.Notify.warning(`${contact.name} or ${contact.number} is already in contact`);
         return;
     }
         const action = addContact(contact);
@@ -27,9 +27,9 @@ const PhonebookAdd = () => {
         setNumber('');
     }
 
-        const isDublicate = ({ name }) => {
+        const isDublicate = ({ name, number }) => {
         const result = contacts.find(
-            contact => contact.name.toLowerCase() === name.toLowerCase()
+            contact => contact.name.toLowerCase() === name.toLowerCase() || contact.number.toLowerCase() === number.toLowerCase()
     );
         return result;
     }
