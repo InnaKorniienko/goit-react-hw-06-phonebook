@@ -18,6 +18,7 @@ import storage from 'redux-persist/lib/storage';
 const contactsPersistConfig = {
   key: 'root',
   storage,
+  blacklist: ['filter']
 }
 
 const reducer = combineReducers({ contacts: contactsReducer,
